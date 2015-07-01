@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="activity_camera_background">@color/camera_shade_color</color>
+
+    <bool name="use_continuous_focus">true</bool>
+    <integer name="auto_focus_init_delay">2000</integer>
+    <integer name="auto_focus_interval_busy">1500</integer>
+    <integer name="continuous_focus_interval">5000</integer>
+
+    <bool name="use_focus_on_accel">true</bool>
+    <item name="focus_on_accel" format="float" type="dimen">0.25</item>
+
+    <item name="lux_too_dark" format="float" type="dimen">45.0</item>
+    <item name="lux_bright_enough" format="float" type="dimen">450.0</item>
+
+    <item name="max_aspect_distortion" format="float" type="dimen">0.15</item>
+
+    <string name="capture_orientation">portrait</string>
+    <integer name="capture_adjust_orientation">90</integer>
+
+    <string name="capture_tmp_filename">fovea.jpg</string>
+    <integer name="capture_jpeg_quality">80</integer>
+    <integer name="capture_max_side">640</integer>
+    <bool name="capture_preview_frame">false</bool>
+
+    <bool name="use_camera_shade">true</bool>
+    <integer name="camera_shade_init_delay">500</integer>
+
+    <integer name="min_picture_side">640</integer>
+
+</resources>

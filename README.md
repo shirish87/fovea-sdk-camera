@@ -1,5 +1,6 @@
 # fovea-sdk-camera
------------------------
+
+> Android SDK 14+.
 
 Reduces the tedious and complex job of creating a custom Camera and capturing a picture to the following interface:
 
@@ -35,7 +36,9 @@ public class CameraActivity extends FoveaCameraActivity {
 
 
 # License
------------
+
+Images included in this project are protected by their respective licenses.
+
 Copyright (c) 2015 Shirish Kamath.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
