@@ -66,7 +66,7 @@ import timber.log.Timber;
 
 /**
  * Singleton that loads configuration from resource files and provides them to various components.
- *
+ * <p/>
  * It is also used to set {@link android.hardware.Camera.Parameters}
  * for a given {@link Camera} instance.
  */
@@ -137,6 +137,9 @@ public class CameraConfig {
 
     private final float mMaxAspectDistortion;
 
+    private List<String> mModules;
+
+
     public static CameraConfig init(Application app) {
         return getInstance(app.getApplicationContext());
     }
@@ -191,19 +194,19 @@ public class CameraConfig {
         mMaxAspectDistortion = readFloat(res, R.dimen.max_aspect_distortion);
 
         mCaptureTmpFilename = res.getString(R.string.capture_tmp_filename);
+
+        mModules = new ArrayList<>();
+        mModules.add(CameraModules.AUTO_FOCUS);
+        mModules.add(CameraModules.FLASH);
+        mModules.add(CameraModules.CAPTURE);
+        mModules.add(CameraModules.SHADE);
+
+        //LUX values vary far too much across devices
+        //mModules.add(CameraModules.LIGHT_SENSOR);
     }
 
     public List<String> getCameraModules() {
-        List<String> modules = new ArrayList<>();
-        modules.add(CameraModules.AUTO_FOCUS);
-        modules.add(CameraModules.FLASH);
-        modules.add(CameraModules.CAPTURE);
-        modules.add(CameraModules.SHADE);
-
-        //LUX values vary far too much across devices
-        //modules.add(CameraModules.LIGHT_SENSOR);
-
-        return modules;
+        return mModules;
     }
 
     public String getCaptureOrientation() {
